@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Конвертер валют</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.svg" alt="Logo">
+    </div>
+    <nav class="navbar">
+      <a href="#">БАНК</a>
+      <a href="#">БИЗНЕС</a>
+      <a href="#">ИНВЕСТИЦИИ</a>
+      <a href="#">СТРАХОВАНИЕ</a>
+      <a href="#">МОБИЛЬ</a>
+      <a href="#">ПУТЕШЕСТВИЯ</a>
+      <a href="#">РАЗВЛЕЧЕНИЯ</a>
+    </nav>
+    <button class="login-btn">ВОЙТИ</button>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <main>
+    <h1>Конвертер валют онлайн</h1>
+    <div class="converter">
+      <section class="input-section">
+        <p>У меня есть</p>
+        <div class="currency-buttons">
+          <button class="currency-btn active">RUB</button>
+          <button class="currency-btn">USD</button>
+          <button class="currency-btn">EUR</button>
+          <button class="currency-btn">GBP</button>
+        </div>
+        <input type="text" id="fromAmount" value="5000">
+        <p id="fromRate">1 RUB = 0.0135 USD</p>
+      </section>
+      <section class="output-section">
+        <p>Хочу приобрести</p>
+        <div class="currency-buttons">
+          <button class="currency-btn active">RUB</button>
+          <button class="currency-btn">USD</button>
+          <button class="currency-btn">EUR</button>
+          <button class="currency-btn">GBP</button>
+        </div>
+        <input type="text" id="toAmount" readonly>
+        <p id="toRate">1 USD = 73.8896 RUB</p>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
