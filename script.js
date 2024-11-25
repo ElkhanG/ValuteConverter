@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const fromRateDisplay = document.getElementById("fromRate");
     const toRateDisplay = document.getElementById("toRate");
 
-    const apiKey = "ba536e9b9aba5317f40b4a00c0643541";
+    const apiKey = "a9a0ca15e5408f52dad8fd58c3574609";
     const apiBase = "http://api.currencylayer.com/live";
 
     const activateButton = (buttons, selectedCurrency) => {
@@ -87,7 +87,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     fromAmountInput.addEventListener("input", (event) => {
-        const value = event.target.value.replace(/,/g, ".");
+        let value = event.target.value;
+        // Replace commas with dots
+        value = value.replace(/,/g, ".");
+        // Remove invalid characters (only allow digits and dots)
+        value = value.replace(/[^0-9.]/g, "");
+        // Prevent more than one dot
+        const parts = value.split('.');
+        if (parts.length > 2) {
+            value = parts[0] + '.' + parts.slice(1).join('');
+        }
         event.target.value = value;
         updateConversion();
     });
